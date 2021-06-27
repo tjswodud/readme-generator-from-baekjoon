@@ -14,16 +14,14 @@ class ReadmeGenerator:
         self.path = path
 
     def decode(self):
-        error_code = open('error_code.txt', 'r')
-        self.error_code_list = error_code.readlines()
         right_code = open('right_code.txt', 'r')
         self.right_code_list = right_code.readlines()
 
         for i in range(0, len(self.right_code_list)):
             self.right_code_list[i] = self.right_code_list[i].rstrip('\n')
             self.right_code_list[i] = int(self.right_code_list[i])
-
-        print(self.right_code_list)
+    
+        right_code.close()
     
     def crawl(self):
         url = "https://www.acmicpc.net/step"
